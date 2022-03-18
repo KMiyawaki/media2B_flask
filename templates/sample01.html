@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sample_app01</title>
+    <link rel="stylesheet" type="text/css" href="./static/common.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        function renderFrame() {
+            const taHistory = document.getElementById("history");
+            const taDebugText = document.getElementById("debug_text");
+            taDebugText.scrollTop = taDebugText.scrollHeight;
+            taHistory.scrollTop = taHistory.scrollHeight;
+            requestAnimationFrame(renderFrame);
+        }
+
+        window.addEventListener('load', renderFrame);
+    </script>
+    <h1>サンプルアプリ01</h1>
+    <div class="screen">
+        <div style="text-align: center;">
+            <img src="./static/{{face}}.png" style="width: 60%; " />
+        </div>
+        <h2>PCからのメッセージ</h2>
+        <div class="message">
+            <p>{{pc_message}}</p>
+        </div>
+        <h2>ユーザの入力</h2>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="text" id="user_message" name="user_message" placeholder="質問文" class="textArea" /><br />
+            <input type="submit" class="sendButton" value="実行する" />
+        </form>
+        <p>質問応答の履歴</p>
+        <textarea rows="10" id="history" class="textArea">{{history}}</textarea>
+        <p>デバッグテキスト</p>
+        <textarea rows="5" id="debug_text" class="textArea">{{debug_text}}</textarea>
+    </div>
+</body>
+
+</html>
