@@ -10,15 +10,10 @@
 
 <body>
     <script type="text/javascript">
-        function renderFrame() {
-            const taHistory = document.getElementById("history");
-            const taDebugText = document.getElementById("debug_text");
-            taDebugText.scrollTop = taDebugText.scrollHeight;
-            taHistory.scrollTop = taHistory.scrollHeight;
-            requestAnimationFrame(renderFrame);
+        function scrollTextArea(targertID) {
+            const target = document.getElementById(targertID);
+            target.scrollTop = target.scrollHeight;
         }
-
-        window.addEventListener('load', renderFrame);
     </script>
     <h1>サンプルアプリ01</h1>
     <div class="screen">
@@ -34,9 +29,9 @@
             <input type="text" id="user_message" name="user_message" placeholder="質問文" class="textArea" /><br />
             <input type="submit" class="sendButton" value="実行する" />
         </form>
-        <p>質問応答の履歴</p>
+        <p>質問応答の履歴 <button onclick="javasctipt:scrollTextArea('history')">最下段を表示</button></p>
         <textarea rows="10" id="history" class="textArea">{{history}}</textarea>
-        <p>デバッグテキスト</p>
+        <p>デバッグテキスト <button onclick="javasctipt:scrollTextArea('debug_text')">最下段を表示</button></p>
         <textarea rows="5" id="debug_text" class="textArea">{{debug_text}}</textarea>
     </div>
 </body>
