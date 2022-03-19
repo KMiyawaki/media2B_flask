@@ -17,6 +17,7 @@
     </script>
     <h1>サンプルアプリ01</h1>
     <div class="screen">
+        <audio autoplay src="./static/{{sound}}.wav"></audio>
         <div style="text-align: center;">
             <img src="./static/{{face}}.png" style="width: 60%; " />
         </div>
@@ -26,7 +27,7 @@
         </div>
         <h2>ユーザの入力</h2>
         <form action="/" method="POST" enctype="multipart/form-data">
-            <input type="text" id="user_message" name="user_message" placeholder="質問文" class="textArea" /><br />
+            <input type="text" id="user_message" name="user_message" placeholder="入力" class="textArea" /><br />
             <input type="submit" class="sendButton" value="実行する" />
         </form>
         <p>質問応答の履歴 <button onclick="javasctipt:scrollTextArea('history')">最下段を表示</button></p>

@@ -20,7 +20,7 @@ def make_history_text(h_list):
 def index():
     pc = Markup("<b>こんにちは！私の名前はサンプル君です。</b><br/>"
                 "質問文を入力して、実行ボタンを押してください。")
-    return render_template("sample01.html", pc_message=pc, face="normal", history="", debug_text="開発中")
+    return render_template("sample01.html", sound="normal", face="normal", pc_message=pc, history="", debug_text="開発中")
 
 
 @g_app.route('/', methods=['POST'])
@@ -32,7 +32,7 @@ def output():
     ft = random.choice(["normal", "happy", "sad"])
     g_hist.append(
         (dt.strftime("%Y/%m/%d %H:%M:%S"), user, pc))
-    return render_template("sample01.html", pc_message=pc, face=ft, history=make_history_text(g_hist), debug_text=output.__name__)
+    return render_template("sample01.html", sound=ft, face=ft, pc_message=pc, history=make_history_text(g_hist), debug_text=output.__name__)
 
 
 if __name__ == "__main__":
