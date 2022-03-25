@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 from flask import Flask
 
 g_app = Flask(__name__)
