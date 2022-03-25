@@ -2,11 +2,11 @@
 
 ---
 
-適当なディレクトリに以下のようにファイルを配置してください。作業ディレクトリを`media2B_flask`とします。  
+適当なディレクトリに以下のようにファイルを配置してください。作業ディレクトリを`media2B_flask-main`とします。  
 下記リストには動作に必要なファイルのみ示しています。
 
 ```cmd
-media2B_flask
+media2B_flask-main
 │ hello.py
 │ sample01.py
 ├─static
@@ -21,7 +21,7 @@ media2B_flask
         sample01.html
 ```
 
-`media2B_flask`で`hello.py`を実行してください。
+`media2B_flask-main`で`hello.py`を実行してください。
 
 ```cmd
 >python3 hello.py
